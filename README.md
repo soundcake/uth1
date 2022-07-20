@@ -4,7 +4,7 @@ Project created with Laravel, using Spatie roles and permissions package, breeze
 
 <h2>Setup</h2>
 To get up and running, clone the repo and run the following commands from the projects root directory:
-````
+```
 composer install
 
 ./vendor/bin/sail up
@@ -12,11 +12,11 @@ composer install
 npm install
 
 npm run dev
-````
+```
 And then migrate and populate the database:
-````
+```
 php artisan migrate:fresh --seed
-````
+```
 
 <h2>Details</h2>
 There are 3 pages:
@@ -37,18 +37,18 @@ Admin dashboard displays a table with all user names, their roles, their bank ac
 <hr />
 In order to see the user details in the database (to log in with), first run:
 
-````
+```
 php artisan tinker
-````
+```
 
 And then to select admins:
-````
+```
 DB::select('SELECT users.id AS user_id, users.name, users.email, roles.name AS role_name FROM users INNER JOIN model_has_roles ON model_has_roles.model_id = users.id INNER JOIN roles ON roles.id = model_has_roles.role_id WHERE roles.name = \'BankAdmin\'')
-````
+```
 Or to select users:
-````
+```
 DB::select('SELECT users.id AS user_id, users.name, users.email, roles.name AS role_name FROM users INNER JOIN model_has_roles ON model_has_roles.model_id = users.id INNER JOIN roles ON roles.id = model_has_roles.role_id WHERE roles.name = \'BankUser\'')
-````
+```
 
 The above will show user emails and the password for every user is: <strong>password</strong>
 
@@ -56,10 +56,10 @@ The above will show user emails and the password for every user is: <strong>pass
 
 Tests can be run as normal:
 
-````
+```
 php artisan test
 
 ./vendor/bin/phpunit
-````
+```
 
 AdminDashboard feature test makes sure only admins can access the admin dashboard
