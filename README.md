@@ -4,6 +4,7 @@ Project created with Laravel, using Spatie roles and permissions package, breeze
 
 <h2>Setup</h2>
 To get up and running, clone the repo and run the following commands from the projects root directory:
+
 ```
 composer install
 
@@ -14,6 +15,7 @@ npm install
 npm run dev
 ```
 And then migrate and populate the database:
+
 ```
 php artisan migrate:fresh --seed
 ```
